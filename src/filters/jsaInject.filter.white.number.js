@@ -10,8 +10,8 @@
 	 * @return String A string containing the cleaned number, or an empty string if the input could not be converted.
 	 */
 	function number(dirty) {
-		clean = new Number(dirty);
-		if (clean === Number.NaN)
+		var clean = new Number(dirty);
+		if (isNaN(clean))
 			return "";
 		else
 			return clean.toString();

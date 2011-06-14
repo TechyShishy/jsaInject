@@ -7,18 +7,17 @@
 	 * To verify that something is actually a number, use {@link filter.white.number}.
 	 * To verify that something only contains numerals, use {@link filter.white.numeral}.
 	 * @memberOf jsaInject.filter.white
-	 * @name int
 	 * @param dirty String Potentially dirty string to be passed in and verified as an int.
 	 * @return String A String containing the cleaned int.
 	 */
-	function intFilter(dirty) {
+	function integer(dirty) {
 		var dirtyNum = new Number(dirty)
-		clean = parseInt(dirtyNum, 10);
-		if (clean === Number.NaN)
+		var clean = parseInt(dirtyNum, 10);
+		if (isNaN(clean))
 			return "";
 		else
 			return clean.toString();
 	}
 
-	jsaInject.filter.white.int = intFilter;
+	jsaInject.filter.white.integer = integer;
 })(jQuery, jQuery.jsaInject);
