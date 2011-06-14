@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	jsaInject build script
+	
+	all               Build and test everything; create a distribution.
+	default           Perform a default build; don't clean/test.
+	main              Build main code.
+	clean             Delete all generated files and directories.
+	dist              Produce the distributables.
+	distclean         Clean up the distribution files only.
+	docs              Generate all documentation.
+	init              Initialize the build: create directories, call <tstamp> and other common actions.
+	jsdocs            Generate the JSdoc pages.
+	printerdocs       Generate printable documents.
+	test              Run the unit tests.
+-->
+
+<project name="jsaInject" default="default">
+	<target name="default" depends="init,main,dist">
+	
+	</target>
+	<target name="all" depends="clean,init,main,docs,dist,test" description="Build and test everything; create a distribution.">
+	
+	</target>
+	<target name="init">
+	
+	</target>
+	<target name="clean" depends="init,distclean" description="Delete all generated files and directories.">
+	
+	</target>
+	<target name="main" depends="init" description="Build main code.">
+	
+	</target>
+	<target name="docs" depends="init,jsdocs,printerdocs" description="Generate all documentation.">
+	
+	</target>
+	<target name="jsdocs" depends="init">
+	
+	</target>
+	<target name="printerdocs" depends="init">
+	
+	</target>
+	<target name="dist" depends="init,main" description="Produce the distributables.">
+	
+	</target>
+	<target name="distclean" depends="init">
+	
+	</target>
+	<target name="test" depends="init,main" description="Run the unit tests.">
+	
+	</target>
+	<target name="prepare-for-release" depends="init,update-version" description="Prepare the build for a new release version.">
+	
+	</target>
+	<target name="update-version" depends="init">
+	
+	</target>
+	<target name="usage" description="Display usage information.">
+	
+	</target>
+</project>
