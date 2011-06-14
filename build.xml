@@ -16,6 +16,11 @@
 -->
 
 <project name="jsaInject" default="default">
+	<property name="src.dir" value="src" />
+	<property name="build.dir" value="build" />
+	<property name="lib.dir" value="lib" />
+
+
 	<target name="default" depends="init,main,dist">
 	
 	</target>
@@ -34,8 +39,8 @@
 	<target name="build-filters" depends="init">
 		<concat destfile="${build.dir}/jsaInject.filters.js">
 			<fileset dir="${src.dir}/filters">
-				<include name="jsaInject.white.*.js" />
-				<include name="jsaInject.black.*.js" />
+				<include name="jsaInject.filter.white.*.js" />
+				<include name="jsaInject.filter.black.*.js" />
 			</fileset>
 		</concat>
 	</target>
