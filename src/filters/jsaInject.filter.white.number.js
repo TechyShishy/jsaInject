@@ -16,6 +16,6 @@
 		else
 			return clean.toString();
 	}
-
+	
 	jsaInject.filter.white.number = number;
 })(jQuery, jQuery.jsaInject);

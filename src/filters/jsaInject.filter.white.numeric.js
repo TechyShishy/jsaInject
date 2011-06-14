@@ -12,6 +12,6 @@
 	function numeric(dirty) {
 		return dirty.replace(/[^0-9.,-]/g, "");
 	}
-
+	
 	jsaInject.filter.white.numeric = numeric;
 })(jQuery, jQuery.jsaInject);

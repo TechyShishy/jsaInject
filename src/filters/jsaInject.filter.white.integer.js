@@ -18,6 +18,6 @@
 		else
 			return clean.toString();
 	}
-
+	
 	jsaInject.filter.white.integer = integer;
 })(jQuery, jQuery.jsaInject);
