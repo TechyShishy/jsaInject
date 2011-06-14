@@ -28,8 +28,41 @@
 	<target name="clean" depends="init,distclean" description="Delete all generated files and directories.">
 	
 	</target>
-	<target name="main" depends="init" description="Build main code.">
+	<target name="main" depends="init,concat-all,compress" description="Build main code.">
 	
+	</target>
+	<target name="build-filters" depends="init">
+		<concat destfile="${build.dir}/jsaInject.filters.js">
+			<fileset dir="${src.dir}/filters">
+				<include name="jsaInject.white.*.js" />
+				<include name="jsaInject.black.*.js" />
+			</fileset>
+		</concat>
+	</target>
+	<target name="build-core" depends="init">
+		<concat destfile="${build.dir}/jsaInject.core.js">
+			<fileset dir="${src.dir}/core">
+				<include name="jsaInject.*.js" />
+			</fileset>
+		</concat>
+	</target>
+	<target name="concat-all" depends="init,build-filters,build-core">
+		<concat destfile="${build.dir}/jsaInject.concat.js">
+			<fileset dir="${build.dir}">
+				<include name="jsaInject.core.js" />
+				<include name="jsaInject.filters.js" />
+			</fileset>
+		</concat>
+	</target>
+	<target name="compress" depends="init,concat-all">
+		<closure-compress output="${build.dir}/jsaInject.compress.js" compilationLevel="advanced" warning="verbose" debug="false" >
+			<sources dir="${build.dir}">
+				<file name="jsaInject.concat.js" />
+			</sources>
+			<externs dir="${src.dir}">
+				<file name="externs.js" />
+			</externs>
+		</closure-compress>
 	</target>
 	<target name="docs" depends="init,jsdocs,printerdocs" description="Generate all documentation.">
 	
@@ -58,4 +91,6 @@
 	<target name="usage" description="Display usage information.">
 	
 	</target>
+
+	<taskdef name="closure-compress" classname="com.google.javascript.jscomp.ant.CompileTask" classpath="${lib.dir}/closure-compiler/compiler.jar" />
 </project>
