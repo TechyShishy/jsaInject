@@ -67,6 +67,9 @@
 			<externs dir="${src.dir}">
 				<file name="externs.js" />
 			</externs>
+			<externs dir="${lib.dir}/closure-compiler">
+				<file name="jquery-1.6.js" />
+			</externs>
 		</closure-compress>
 	</target>
 	<target name="docs" depends="init,jsdocs,printerdocs" description="Generate all documentation.">
