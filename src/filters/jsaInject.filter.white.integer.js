@@ -19,5 +19,5 @@
 			return clean.toString();
 	}
 	
-	jsaInject.filter.white.integer = integer;
+	jsaInject['filter']['white']['integer'] = integer;
 })(jQuery, jQuery.jsaInject);
