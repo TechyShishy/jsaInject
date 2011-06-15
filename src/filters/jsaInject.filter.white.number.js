@@ -17,5 +17,5 @@
 			return clean.toString();
 	}
 	
-	jsaInject.filter.white.number = number;
+	jsaInject['filter']['white']['number'] = number;
 })(jQuery, jQuery.jsaInject);

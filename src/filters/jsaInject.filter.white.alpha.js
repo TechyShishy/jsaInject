@@ -11,5 +11,5 @@
 		return dirty.replace(/[^a-zA-Z]/g, "");
 	}
 	
-	jsaInject.filter.white.alpha = alpha;
+	jsaInject['filter']['white']['alpha'] = alpha;
 })(jQuery, jQuery.jsaInject);
