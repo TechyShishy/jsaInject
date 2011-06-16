@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>jsaInject.core.doFilter()</title>
+	</head>
+	<body>
+		<div class="target1" ><span>Target 1: </span></div>
+		<div class="target2" ><span>Target 2: </span></div>
+		<div class="target3" ><span>Target 3: </span></div>
+		<div class="target4" ><span>Target 4: </span></div>
+		<div class="target5" ><span>Target 5: </span></div>
+		<div class="target6" ><span>Target 6: </span></div>
+		<div class="target7" ><span>Target 7: </span></div>
+		<div class="target8" ><span>Target 8: </span></div>
+		<script type="text/javascript" src="../../lib/jQuery/jquery.min.js"></script>
+		<script type="text/javascript" src="../../build/jsaInject.compress.js"></script>
+		<script type="text/javascript">
+			jQuery('.target1').append(jQuery.jsaInject.doFilter(jQuery.jsaInject.filter.white.number, "42"));
+			jQuery('.target2').append(jQuery.jsaInject.doFilter(jQuery.jsaInject.filter.white.number, "15.01"));
+			jQuery('.target3').append(jQuery.jsaInject.doFilter(jQuery.jsaInject.filter.white.number, "15.01e12"));
+			jQuery('.target4').append(jQuery.jsaInject.doFilter(jQuery.jsaInject.filter.white.number, "15.01e"));
+			jQuery('.target5').append(jQuery.jsaInject.doFilter(jQuery.jsaInject.filter.white.number, "Hello World"));
+			jQuery('.target6').append(jQuery.jsaInject.doFilter(jQuery.jsaInject.filter.white.number, "0x42"));
+			jQuery('.target7').append(jQuery.jsaInject.doFilter(jQuery.jsaInject.filter.white.number, "042"));
+			jQuery('.target8').append(jQuery.jsaInject.doFilter(jQuery.jsaInject.filter.white.number, "700-16"));
+		</script>
+	</body>
+</html>

@@ -1,8 +1,8 @@
 (function($){
 	var jsaInject = {};
-	jsaInject.filters = {};
-	jsaInject.filters.white = {};
-	jsaInject.filters.black = {};
+	jsaInject['filter'] = {};
+	jsaInject['filter']['white'] = {};
+	jsaInject['filter']['black'] = {};
 
 	function doFilter(filter, dirty) {
 		var clean = "";
@@ -39,7 +39,11 @@
 		clean = filter(dirty);
 		if(clean !== dirty)
                         jsaInject.log.info("String \"%s\" is dirty, cleaned to \"%s\" ", dirty, clean);
+
+		return clean;
 	}
 
-	$.jsaInject = jsaInject;
+	jsaInject['doFilter'] = doFilter;
+
+	$['jsaInject'] = jsaInject;
 })(jQuery);

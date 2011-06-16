@@ -1,0 +1,1 @@
+jQuery.jsaInject = function(){};
